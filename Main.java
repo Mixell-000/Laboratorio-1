@@ -6,8 +6,8 @@ public class Main
 {
 	public static char[][] CreadorDeMatriz(){
 		
-		String VocabuPapu1 = "⊡abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; // la cantidad de caracteres puede cambiar, de nada papus (-> VocabuPapu.length())
-		String VocabuPapu = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; 
+		String VocabuPapu1 = "⊡abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890"; // la cantidad de caracteres puede cambiar, de nada papus (-> VocabuPapu.length())
+		String VocabuPapu = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890"; 
 
 		char[] arr =new char [VocabuPapu.length()];
 		
@@ -36,7 +36,22 @@ public class Main
 	}
 	
 	public static void main(String[] args) {
-    
+
+		char alphabet[][] = CreadorDeMatriz();
+
+		int mientras;
+		string key; //converirla a arreglo, pueden ocupar el codigo que ocupé para el char[] arr
+
+		while(mientras != 7){
+
+			if(Mientras == 1){
+
+			}
+			if else (mientras == 2){
+
+			}
+		
+		}
   }
 
 	
