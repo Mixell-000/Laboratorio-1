@@ -1,0 +1,44 @@
+import java.util.*;
+import java.io.*;
+		//LISTOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String VocabuPapu1 = "⊡abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; // la cantidad de caracteres puede cambiar, de nada papus (-> VocabuPapu.length())
+		String VocabuPapu = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; 
+
+		char[] arr =new char [VocabuPapu.length()];
+		
+		char[][] PAPUGENERADOR = new char [VocabuPapu1.length()] [VocabuPapu1.length()];
+		
+		for(int i = 0; i < VocabuPapu.length();i++){ //En este for se chanta todo VocabuPapu en el array "arr" xD
+		
+		arr[i] = VocabuPapu.charAt(i);
+		
+		
+		}
+
+        for(int i = 0; i < VocabuPapu.length(); i++){
+            PAPUGENERADOR[i][0] = VocabuPapu1.charAt(i); //Es una fila con diferentes caracteres porque está el cuadradito
+        }
+        
+		for(int a = 0; a < VocabuPapu.length()-1; a++){ //a en este caso es el numero de la linea en la que están~
+		    for(int i = 0; i<VocabuPapu.length(); i++){ //esta cagada recorre la fila de derecha a izquierda
+		                
+		                    
+		                        PAPUGENERADOR[i][a+1] = arr[(i+a) % VocabuPapu.length()];
+            }                   // i = fila, a = columna
+
+		}
+
+		for(int a = 0; a < VocabuPapu.length(); a++){ //esto es solo para asegurarme de que el array tenga todo, eliminalo en el final noma
+		    for(int i = 0; i<VocabuPapu.length(); i++){
+		        		                        System.out.print(PAPUGENERADOR[i][a] + " ");
+            }
+		                    System.out.println();
+		}
+		
+	}
+}
