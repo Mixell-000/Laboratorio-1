@@ -3,8 +3,13 @@ import java.io.*;
 		//Aquí vamos poniendo nuestro codigo principal a partir de los codigos secundarios que hemos hecho.
 
 
-
-    public static int Convertidor(string x){ //string x es lo que recibimos
+class BigVigenere{
+    
+}
+    
+public class Main
+{
+    public static int[] PAPUConvertidor(String x){ //string x es lo que recibimos
 	    
 	    int[] entrega = new int [x.length()];
 	    
@@ -38,12 +43,12 @@ import java.io.*;
 	    
         	    for(int i = 0; i < x.length(); i++){
         	    
-        	        System.out.println(entrega[i]);
+//        	        System.out.println(entrega[i]);
         	    }
+        	    
+        	    return entrega;
 
 	    }
-public class Main
-{
 	public static char[][] CreadorDeMatriz(){
 		
 		String VocabuPapu1 = "⊡abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890"; // la cantidad de caracteres puede cambiar, de nada papus (-> VocabuPapu.length())
@@ -80,18 +85,18 @@ public class Main
 		char alphabet[][] = CreadorDeMatriz();
 
 		int mientras;
-		string key; //converirla a arreglo, pueden ocupar el codigo que ocupé para el char[] arr
+		String key; //converirla a arreglo, pueden ocupar el codigo que ocupé para el char[] arr
 
-		while(mientras != 7){
-
-			if(Mientras == 1){
-
-			}
-			if else (mientras == 2){
-
-			}
-		
-		}
+		Scanner Poto = new Scanner(System.in);
+	    System.out.println("dime una palabra");
+	    String x = Poto.nextLine();
+   	    System.out.println("dime una clave");
+	    String y = Poto.nextLine();
+	    
+	    int palabra[] = PAPUConvertidor(x);
+	    int clave[] = PAPUConvertidor(y);
+	    
+	    System.out.println(alphabet[palabra[0]][clave[0]]);
   }
 
 	
