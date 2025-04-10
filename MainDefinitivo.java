@@ -160,8 +160,6 @@ public char search(int position) {
     int filas = alfabeto.length;
     int columnas = alfabeto[0].length;
 
-    if (position < 0 || position >= filas * columnas) {
-        throw new IllegalArgumentException("La posiciC3n estC! fuera del rango vC!lido.");
     }
 
     // Bussqueda iterativa de izquierda a derecha y de arriba hacia abajo
@@ -203,7 +201,7 @@ public class Main {
 
 	System.out.println("._____________________________. ");
 
-		System.out.print("Ingrese la posiciC3n a descifrar: ");
+		System.out.print("Ingrese la posicion a descifrar: ");
 		int pos = in.nextInt();
 		char caracter = Matriz.search(pos);
 		System.out.println("Caraccter en la posicion " + pos + ": " + caracter);
