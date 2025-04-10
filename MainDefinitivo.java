@@ -202,7 +202,7 @@ public class Main {
 		System.out.print("Ingrese la posiciC3n a descifrar: ");
 		int pos = in.nextInt();
 		char caracter = Matriz.search(pos);
-		System.out.println("CarC!cter en la posiciC3n " + pos + ": " + caracter);
+		System.out.println("Caraccter en la posicion " + pos + ": " + caracter);
 
         in.close(); // <-- cerrar al final, cuando ya no se necesita
     }
