@@ -155,6 +155,23 @@ public void reEncrypt() {
     System.out.println("Mensaje re-encriptado con nueva clave: " + mensajeNuevoCifrado);
 }
 
+public char search(int position) {
+		int filas = alfabeto.length;
+		int columnas = alfabeto[0].length;
+		int total = filas * columnas;
+
+		if (position < 0 || position >= total) {
+			throw new IllegalArgumentException("La posiciC3n estC! fuera del rango vC!lido.");
+		}
+
+		// ConversiC3n de posiciC3n lineal a coordenadas (fila, columna)
+		int fila = position / columnas;
+		int columna = position % columnas;
+
+		return alfabeto[fila][columna];
+	}
+
+}
 
 }
 
@@ -177,7 +194,14 @@ public class Main {
 
 
         System.out.println("._____. RE - ENCRIPTACION._____. :");
-        Matriz.reEncrypt();        
+        Matriz.reEncrypt();
+
+	System.out.println("._____________________________. ");
+
+		System.out.print("Ingrese la posiciC3n a descifrar: ");
+		int pos = in.nextInt();
+		char caracter = Matriz.search(pos);
+		System.out.println("CarC!cter en la posiciC3n " + pos + ": " + caracter);
 
         in.close(); // <-- cerrar al final, cuando ya no se necesita
     }
