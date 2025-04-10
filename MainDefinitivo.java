@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.*;
 
+//creo q me deje algo de codigo suelto en el discrod igual, para que le den un ojo
 //me olvide de mandar el avance anteriormente, aqui esta
 
 class BigVigenere {
