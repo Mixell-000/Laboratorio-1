@@ -157,24 +157,28 @@ public void reEncrypt() {
 }
 
 public char search(int position) {
-		int filas = alfabeto.length;
-		int columnas = alfabeto[0].length;
-		int total = filas * columnas;
+    int filas = alfabeto.length;
+    int columnas = alfabeto[0].length;
 
-		if (position < 0 || position >= total) {
-			throw new IllegalArgumentException("La posiciC3n estC! fuera del rango vC!lido.");
-		}
+    if (position < 0 || position >= filas * columnas) {
+        throw new IllegalArgumentException("La posiciC3n estC! fuera del rango vC!lido.");
+    }
 
-		// ConversiC3n de posiciC3n lineal a coordenadas (fila, columna)
-		int fila = position / columnas;
-		int columna = position % columnas;
-
-		return alfabeto[fila][columna];
-	}
-
+    // BC:squeda iterativa de izquierda a derecha y de arriba hacia abajo
+    int contador = 0;
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            if (contador == position) {
+                return alfabeto[i][j];
+            }
+            contador++;
+        }
+    }
 }
 
 }
+
+
 
 public class Main {
     public static void main(String[] args) {
