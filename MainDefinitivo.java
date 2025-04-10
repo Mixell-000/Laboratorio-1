@@ -164,7 +164,7 @@ public char search(int position) {
         throw new IllegalArgumentException("La posiciC3n estC! fuera del rango vC!lido.");
     }
 
-    // BC:squeda iterativa de izquierda a derecha y de arriba hacia abajo
+    // Bussqueda iterativa de izquierda a derecha y de arriba hacia abajo
     int contador = 0;
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
