@@ -180,13 +180,13 @@ public String decrypt(String encryptedMessage) {
 			}
 		}
 
-		// Si no se encuentra la posiciC3n, retornamos un valor por defecto o lanzamos una excepciC3n
+		// Si no se encuentra la posición, retornamos un valor por defecto o lanzamos una excepciC3n
 		System.out.println("Posicion no valida.");
 		return '\0'; // o puedes lanzar una excepcion
 	}
 
 	public char optimalSearch(int position) {
-		// Verificar que la posiciC3n sea valida
+		// Verificar que la posición sea valida
 		if (position < 0 || position >= Tamanno * Tamanno) {
 			System.out.println("Posicion no valida.");
 			return '\0';  // Retornamos un valor nulo si la posicion no es valida
@@ -196,7 +196,7 @@ public String decrypt(String encryptedMessage) {
 		int fila = position / Tamanno;  // Division entera para obtener la fila
 		int columna = position % Tamanno;  // Modulo para obtener la columna
 
-		// Retornar el carC!cter correspondiente en la matriz
+		// Retornar el carácter correspondiente en la matriz
 		return alfabeto[fila][columna];
 	}
 
