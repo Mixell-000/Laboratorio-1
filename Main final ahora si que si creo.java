@@ -99,35 +99,42 @@ public String encrypt(String message) {
 
 
 
-	public String decrypt(String encryptedMessage) {
-		StringBuilder decryptedMessage = new StringBuilder();
-		int LargoKey = key.length;
+public String decrypt(String encryptedMessage) {
+	StringBuilder decryptedMessage = new StringBuilder();
+	int LargoKey = key.length;
 
-		for (int k = 0; k < encryptedMessage.length(); k++) {
-			char mensajeChar = encryptedMessage.charAt(k);
+	for (int k = 0; k < encryptedMessage.length(); k++) {
+		char mensajeChar = encryptedMessage.charAt(k);
 
-			// Encontrar la posiciC3n del carC!cter cifrado en la primera fila del alfabeto
-			int encryptedPos = -1;
-			for (int i = 0; i < Tamanno; i++) {
-				if (alfabeto[0][i] == mensajeChar) {
-					encryptedPos = i;
-					break;
-				}
-			}
-
-			// Obtener la posiciC3n de la clave
-			int keyPos = key[k % LargoKey];
-			keyPos = keyPos % Tamanno;
-
-			// Calcular posiciC3n original
-			int originalPos = (encryptedPos - keyPos + Tamanno) % Tamanno;
-
-			// Buscar en la primera columna de la matriz para obtener el carC!cter original
-			decryptedMessage.append(alfabeto[0][originalPos]);
+		// Si es espacio, lo agregamos tal cual y pasamos al siguiente
+		if (mensajeChar == ' ') {
+			decryptedMessage.append(' ');
+			continue;
 		}
 
-		return decryptedMessage.toString();
+		// Encontrar la posición del carácter cifrado en la primera fila del alfabeto
+		int encryptedPos = -1;
+		for (int i = 0; i < Tamanno; i++) {
+			if (alfabeto[0][i] == mensajeChar) {
+				encryptedPos = i;
+				break;
+			}
+		}
+
+		// Obtener la posición de la clave
+		int keyPos = key[k % LargoKey];
+		keyPos = keyPos % Tamanno;
+
+		// Calcular posición original
+		int originalPos = (encryptedPos - keyPos + Tamanno) % Tamanno;
+
+		// Agregar el carácter original desde la fila 0 (como en el encrypt)
+		decryptedMessage.append(alfabeto[0][originalPos]);
 	}
+
+	return decryptedMessage.toString();
+}
+
 
 
 
