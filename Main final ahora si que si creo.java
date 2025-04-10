@@ -251,21 +251,33 @@ public class Main {
 					Matriz.reEncrypt();
 					break;
 
-				case 4://Busqueda Normal
-					System.out.print("Ingrese la posición que desea buscar (modo normal): ");
-					int pos1 = Integer.parseInt(in.nextLine());
-					char caracter1 = Matriz.search(pos1);
-					System.out.println("Carácter encontrado: " + caracter1);
-					break;
+				case 4: // Búsqueda Normal
+    						try {
+      							  System.out.print("Ingrese la posición que desea buscar (modo normal): "); //que hacia esto? -es pa que no tire error cuando pones un char xD
+       							 int pos1 = Integer.parseInt(in.nextLine());
+      							  char caracter1 = Matriz.search(pos1);
+        					System.out.println("Carácter encontrado: " + caracter1);
+							    } catch (NumberFormatException e) {
+        						System.out.println("Por favor, ingresa un número entero válido para la posición.");
+  									  }
+   								 break;
 
-				case 5://Busqueda Pro
-					System.out.print("Ingrese la posición que desea buscar (modo optimo): ");
-					int pos2 = Integer.parseInt(in.nextLine());
-					char caracter2 = Matriz.optimalSearch(pos2);
-					if (caracter2 != '\0') {
-						System.out.println("Carácter encontrado: " + caracter2);
-					}
-					break;
+
+				case 5: // Búsqueda Óptima
+ 						   try {
+     							   System.out.print("Ingrese la posición que desea buscar (modo óptimo): ");
+     							   int pos2 = Integer.parseInt(in.nextLine());
+       							 char caracter2 = Matriz.optimalSearch(pos2);
+       								 if (caracter2 != '\0') {
+      							      System.out.println("Carácter encontrado: " + caracter2);
+      								  } else {
+       								     System.out.println("No se encontró ningún char en la posición indicada.");
+      								  }
+   								 } catch (NumberFormatException e) {
+    								    System.out.println("Por favor, ingresa un número entero válido para la posición.");
+ 								   }
+								    break;
+
 
 				case 6:
 					System.out.println("Que tengas buen día! ");
