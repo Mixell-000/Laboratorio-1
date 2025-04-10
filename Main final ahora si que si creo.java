@@ -30,7 +30,7 @@ class BigVigenere {
 		}
 
 		for(int a = 0; a < VocabuPapu.length()-1; a++) { //a en este caso es el numero de la linea en la que estC!n~
-			for(int i = 0; i<VocabuPapu.length(); i++) { //esta cagada recorre la fila de derecha a izquierda
+			for(int i = 0; i<VocabuPapu.length(); i++) { //esta [ ] recorre la fila de derecha a izquierda
 
 
 				PAPUGENERADOR[i][a+1] = arr[(i+a) % VocabuPapu.length()];
