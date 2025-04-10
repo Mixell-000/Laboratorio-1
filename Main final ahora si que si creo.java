@@ -58,40 +58,45 @@ class BigVigenere {
 		this.alfabeto = CreadorDeMatriz();
 	}
 
-	public String encrypt(String message) {
+public String encrypt(String message) {
 
+    StringBuilder encryptedMessage = new StringBuilder();
+    int LargoKey = key.length;
 
+    // Recorrer cada carácter del mensaje
+    for (int k = 0; k < message.length(); k++) {
+        char mensajeChar = message.charAt(k);
 
-		StringBuilder encryptedMessage = new StringBuilder();
-		int LargoKey = key.length;
+        // Si es espacio, se agrega tal cual y se salta la iteración
+        if (mensajeChar == ' ') {
+            encryptedMessage.append(' ');
+            continue;
+        }
 
-		// Recorrer cada carC!cter del mensaje
-		for (int k = 0; k < message.length(); k++) {
-			char mensajeChar = message.charAt(k);
+        // Buscar la posición del carácter del mensaje en la matriz alfabeto
+        int messagePos = -1;
+        for (int m = 0; m < Tamanno; m++) {
+            for (int n = 0; n < Tamanno; n++) {
+                if (alfabeto[m][n] == mensajeChar) {
+                    messagePos = n;
+                    break;
+                }
+            }
+            if (messagePos != -1) break; // Salir si encontramos la posición
+        }
 
-			// Buscar la posiciC3n del carC!cter del mensaje en la matriz alfabeto
-			int messagePos = -1;
-			for (int m = 0; m < Tamanno; m++) {
-				for (int n = 0; n < Tamanno; n++) {
-					if (alfabeto[m][n] == mensajeChar) {
-						messagePos = n;
-						break;
-					}
-				}
-				if (messagePos != -1) break; // Salir si encontramos la posiciC3n
-			}
+        // Buscar la posición correspondiente de la clave
+        int keyPos = key[k % LargoKey]; // La clave se repite si es más corta que el mensaje
+        keyPos = keyPos % Tamanno; // Ajustamos la posición de la clave para que no se salga del tamaño del alfabeto
 
-			// Buscar la posiciC3n correspondiente de la clave
-			int keyPos = key[k % LargoKey]; // La clave se repite si es mC!s corta que el mensaje
-			keyPos = keyPos % Tamanno; // Ajustamos la posiciC3n de la clave para que no se salga del tamaC1o del alfabeto
+        // Cifrar el carácter usando la matriz alfabeto
+        int encryptedPos = (messagePos + keyPos) % Tamanno;
+        encryptedMessage.append(alfabeto[0][encryptedPos]); // Asumimos que usamos la primera fila para obtener el carácter cifrado
+    }
 
-			// Cifrar el carC!cter usando la matriz alfabeto
-			int encryptedPos = (messagePos + keyPos) % Tamanno;
-			encryptedMessage.append(alfabeto[0][encryptedPos]); // Asumimos que usamos la primera fila para obtener el carC!cter cifrado
-		}
+    return encryptedMessage.toString();
+}
 
-		return encryptedMessage.toString();
-	}
 
 
 	public String decrypt(String encryptedMessage) {
