@@ -160,9 +160,7 @@ public char search(int position) {
     int filas = alfabeto.length;
     int columnas = alfabeto[0].length;
 
-    }
-
-    // Bussqueda iterativa de izquierda a derecha y de arriba hacia abajo
+    // Búsqueda iterativa de izquierda a derecha y de arriba hacia abajo
     int contador = 0;
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
@@ -172,8 +170,11 @@ public char search(int position) {
             contador++;
         }
     }
-}
 
+    // Si no se encuentra la posición, retornamos un valor por defecto o lanzamos una excepción
+    System.out.println("Posición no válida.");
+    return '\0'; // o puedes lanzar una excepción, dependiendo de lo que prefieras
+}
 }
 
 
