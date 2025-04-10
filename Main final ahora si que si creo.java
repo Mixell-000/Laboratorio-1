@@ -46,7 +46,7 @@ class BigVigenere {
 		System.out.println("Ingrese clave por utilizar:");
 		String MiKey = in.nextLine();
 
-		key = new int[MiKey.length()]; // <-- inicializar arreglo con el tamaC1o adecuado
+		key = new int[MiKey.length()]; // <-- inicializar arreglo con el tamanno adecuao
 
 		for (int n = 0; n < MiKey.length(); n++) {
 			key[n] = caracteres.indexOf(MiKey.charAt(n));
@@ -181,22 +181,22 @@ public String decrypt(String encryptedMessage) {
 		}
 
 		// Si no se encuentra la posiciC3n, retornamos un valor por defecto o lanzamos una excepciC3n
-		System.out.println("PosiciC3n no vC!lida.");
+		System.out.println("Posicion no valida.");
 		return '\0'; // o puedes lanzar una excepciC3n, dependiendo de lo que prefieras
 	}
 
 	public char optimalSearch(int position) {
-		// Verificar que la posiciC3n sea vC!lida
+		// Verificar que la posicion sea valida
 		if (position < 0 || position >= Tamanno * Tamanno) {
 			System.out.println("PosiciC3n no vC!lida.");
-			return '\0';  // Retornamos un valor nulo si la posiciC3n no es vC!lida
+			return '\0';  // Retornamos un valor nulo si la posicion no es valida
 		}
 
 		// Calcular la fila y la columna de la matriz directamente
-		int fila = position / Tamanno;  // DivisiC3n entera para obtener la fila
-		int columna = position % Tamanno;  // MC3dulo para obtener la columna
+		int fila = position / Tamanno;  // Division entera para obtener la fila
+		int columna = position % Tamanno;  // Modulo para obtener la columna
 
-		// Retornar el carC!cter correspondiente en la matriz
+		// Retornar el caracter correspondiente en la matriz
 		return alfabeto[fila][columna];
 	}
 
@@ -221,7 +221,7 @@ public class Main {
 			System.out.print("Seleccione una opción: ");
 			int opcion = -1;
 
-			// Será necesario una validación? como soy masoquista igual la pondré.
+			// Será necesario una validación?
 			try {
 				opcion = Integer.parseInt(in.nextLine());
 			} catch (NumberFormatException e) {
