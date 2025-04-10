@@ -214,7 +214,7 @@ public class Main {
 		BigVigenere Matriz = new BigVigenere();
 
 		while (true) {
-			System.out.println("\n.______. MENUwU .______.");
+			System.out.println("\n._______. MENU ._______.");
 			System.out.println("1. Encriptar un mensaje");
 			System.out.println("2. Desencriptar un mensaje");
 			System.out.println("3. Re-encriptar mensaje con nueva clave");
@@ -228,7 +228,7 @@ public class Main {
 			try {
 				opcion = Integer.parseInt(in.nextLine());
 			} catch (NumberFormatException e) {
-				System.out.println("Porfa pon un número válido uwu");
+				System.out.println("Porfa pon un número válido");
 				continue;
 			}
 
@@ -268,12 +268,12 @@ public class Main {
 					break;
 
 				case 6:
-					System.out.println("Que tengas buen día! UwU");
+					System.out.println("Que tengas buen día! ");
 					in.close();
 					return;
 
 				default:
-					System.out.println("Opción inválida, intenta otra vez :3");
+					System.out.println("Opción inválida, intenta otra vez ");
 			}
 		}
 	}
